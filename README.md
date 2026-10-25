@@ -15,8 +15,8 @@ WordPress, MySQL, phpMyAdmin, Nginx, Prometheus, Grafana, Loki, Promtail, cAdvis
 - Grafana: http://localhost:3000
 
 ## LogQL examples
-{job="nginx"}
-{job="nginx"} | regexp "(?P<level>info|warn|error|Deactivated|Started)"
-{job="nginx"} |~ "(?i)error|deactivated|failed"
+-{job="nginx"}
+-{job="nginx"} | regexp "(?P<level>info|warn|error|Deactivated|Started)"
+-{job="nginx"} |~ "(?i)error|deactivated|failed"
 
 Never commit .env or real credentials.
