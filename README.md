@@ -16,7 +16,7 @@ WordPress, MySQL, phpMyAdmin, Nginx, Prometheus, Grafana, Loki, Promtail, cAdvis
 
 ## LogQL examples
 {job="nginx"}
-{job="nginx"} |= "GET / HTTP/1.1"
-{job="nginx"} | json | status >= 500
+{job="nginx"} | regexp "(?P<level>info|warn|error|Deactivated|Started)"
+{job="nginx"} |~ "(?i)error|deactivated|failed"
 
 Never commit .env or real credentials.
